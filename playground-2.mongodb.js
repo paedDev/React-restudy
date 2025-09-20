@@ -61,4 +61,32 @@ use("school");
 // });
 
 // db.school.deleteOne({ age: 24 });
-db.school.find();
+// Sorting here 1 for default and -1 for reverse
+// db.school.find().sort({ gpa: -1 });
+
+// db.school.find().sort({ gpa: 1 }).limit(2);
+// db.school.find({}, { _id: false, name: true, gpa: true });
+// db.school.find({ gpa: { $eq: 1.5 } });
+
+// db.school.updateOne(
+//   {
+//     name: "SpongeBob",
+//   },
+//   {
+//     $set: {
+//       name: "hello world",
+//     },
+//   }
+// );
+
+// db.school.find({ name: { $ne: "hello world" } });
+
+// logical operator
+
+db.school.find({
+  $and: [
+    {
+      age: { $lte: 20 },
+    },
+  ],
+});
